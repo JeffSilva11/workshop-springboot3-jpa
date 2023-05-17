@@ -39,7 +39,7 @@ public class OrderItem implements Serializable {
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
-
+	//@JsonIgnore //Ao buscar produtos no POSTMAN recupera produtos e pedidos
 	public Product getProduct() {
 		return id.getProduct();
 	}

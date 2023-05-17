@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 import curso.java.curso_298_projeto.entities.enums.OrderStatus;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -99,6 +98,14 @@ public class Order implements Serializable {
 		return items;
 	}
 
+	public Double getTotal() {
+		double sum = 0.0;
+		for (OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		return sum;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
